@@ -39,6 +39,166 @@ const INITIAL_STUDENTS: Student[] = [
   { id: 'giselle', name: 'Giselle' },
   { id: 'henrique', name: 'Henrique' },
   { id: 'gustavo', name: 'Gustavo' },
+  { id: 'gabriel', name: 'Gabriel' },
+  { id: 'isabella', name: 'Isabella' },
+];
+
+const GABRIEL_PLAN: WorkoutDay[] = [
+  {
+    id: 'gab-day-1',
+    title: 'Segunda-feira',
+    subtitle: 'UPPER (ênfase em peito)',
+    color: 'bg-red-500',
+    exercises: [
+      { id: 'gab1-1', name: 'Supino reto com barra', weight: '', sets: '4x6–8', tips: '', status: 'pending' },
+      { id: 'gab1-2', name: 'Puxada na frente (pulldown)', weight: '', sets: '3x8–12', tips: '', status: 'pending' },
+      { id: 'gab1-3', name: 'Supino inclinado com halteres', weight: '', sets: '3x8–12', tips: '', status: 'pending' },
+      { id: 'gab1-4', name: 'Remada baixa na máquina', weight: '', sets: '3x8–12', tips: '', status: 'pending' },
+      { id: 'gab1-5', name: 'Elevação lateral', weight: '', sets: '3x12–15', tips: '', status: 'pending' },
+      { id: 'gab1-6', name: 'Tríceps na polia', weight: '', sets: '3x10–15', tips: '', status: 'pending' },
+    ],
+  },
+  {
+    id: 'gab-day-2',
+    title: 'Terça-feira',
+    subtitle: 'LOWER (ênfase em quadríceps)',
+    color: 'bg-green-500',
+    exercises: [
+      { id: 'gab2-1', name: 'Agachamento livre', weight: '', sets: '4x6–8', tips: '', status: 'pending' },
+      { id: 'gab2-2', name: 'Leg press', weight: '', sets: '3x8–12', tips: '', status: 'pending' },
+      { id: 'gab2-3', name: 'Cadeira extensora', weight: '', sets: '3x10–15', tips: '', status: 'pending' },
+      { id: 'gab2-4', name: 'Mesa flexora', weight: '', sets: '3x10–15', tips: '', status: 'pending' },
+      { id: 'gab2-5', name: 'Panturrilha em pé ou no leg', weight: '', sets: '4x12–15', tips: '', status: 'pending' },
+      { id: 'gab2-6', name: 'Abdominal à escolha', weight: '', sets: '3x15–20', tips: '', status: 'pending' },
+    ],
+  },
+  {
+    id: 'gab-rest-1',
+    title: 'Quarta-feira',
+    subtitle: 'Descanso',
+    color: 'bg-gray-400',
+    exercises: [],
+    isRestDay: true,
+  },
+  {
+    id: 'gab-day-3',
+    title: 'Quinta-feira',
+    subtitle: 'UPPER (ênfase em costas)',
+    color: 'bg-blue-500',
+    exercises: [
+      { id: 'gab3-1', name: 'Puxada na frente ou barra fixa', weight: '', sets: '4x6–8', tips: '', status: 'pending' },
+      { id: 'gab3-2', name: 'Supino com halteres', weight: '', sets: '3x8–12', tips: '', status: 'pending' },
+      { id: 'gab3-3', name: 'Remada curvada com barra', weight: '', sets: '3x8–12', tips: '', status: 'pending' },
+      { id: 'gab3-4', name: 'Desenvolvimento com halteres', weight: '', sets: '3x8–12', tips: '', status: 'pending' },
+      { id: 'gab3-5', name: 'Rosca direta com barra', weight: '', sets: '3x8–12', tips: '', status: 'pending' },
+      { id: 'gab3-6', name: 'Tríceps francês ou corda', weight: '', sets: '3x10–15', tips: '', status: 'pending' },
+    ],
+  },
+  {
+    id: 'gab-day-4',
+    title: 'Sexta-feira',
+    subtitle: 'LOWER (ênfase em posterior/glúteo)',
+    color: 'bg-orange-500',
+    exercises: [
+      { id: 'gab4-1', name: 'Levantamento terra romeno', weight: '', sets: '4x6–8', tips: '', status: 'pending' },
+      { id: 'gab4-2', name: 'Agachamento búlgaro', weight: '', sets: '3x8–12', tips: 'cada perna', status: 'pending' },
+      { id: 'gab4-3', name: 'Mesa flexora', weight: '', sets: '3x10–15', tips: '', status: 'pending' },
+      { id: 'gab4-4', name: 'Cadeira abdutora', weight: '', sets: '3x12–15', tips: '', status: 'pending' },
+      { id: 'gab4-5', name: 'Panturrilha sentado', weight: '', sets: '4x12–15', tips: '', status: 'pending' },
+      { id: 'gab4-6', name: 'Prancha', weight: '', sets: '3x 30–60s', tips: '', status: 'pending' },
+    ],
+  },
+  {
+    id: 'gab-rest-2',
+    title: 'Sábado',
+    subtitle: 'Descanso',
+    color: 'bg-gray-400',
+    exercises: [],
+    isRestDay: true,
+  },
+  {
+    id: 'gab-rest-3',
+    title: 'Domingo',
+    subtitle: 'Descanso',
+    color: 'bg-gray-400',
+    exercises: [],
+    isRestDay: true,
+  },
+];
+
+const ISABELLA_PLAN: WorkoutDay[] = [
+  {
+    id: 'isa-day-1',
+    title: 'Segunda-feira',
+    subtitle: 'JUMP',
+    color: 'bg-pink-500',
+    exercises: [
+      { id: 'isa1-1', name: 'JUMP', weight: '', sets: '1 hora', tips: '', status: 'pending' },
+    ],
+  },
+  {
+    id: 'isa-day-2',
+    title: 'Terça-feira',
+    subtitle: 'Inferiores',
+    color: 'bg-green-500',
+    exercises: [
+      { id: 'isa2-1', name: 'Agachamento Livre', weight: '', sets: '4x8-12', tips: '', status: 'pending' },
+      { id: 'isa2-2', name: 'Leg press', weight: '', sets: '3x10-15', tips: '', status: 'pending' },
+      { id: 'isa2-3', name: 'Mesa Flexora', weight: '', sets: '3x12-15', tips: '', status: 'pending' },
+      { id: 'isa2-4', name: 'Elevação Pelvica', weight: '', sets: '3x12-15', tips: '', status: 'pending' },
+      { id: 'isa2-5', name: 'Cadeira Abdutora', weight: '', sets: '3x15-20', tips: '', status: 'pending' },
+    ],
+  },
+  {
+    id: 'isa-day-3',
+    title: 'Quarta-feira',
+    subtitle: 'Superiores e Core',
+    color: 'bg-blue-500',
+    exercises: [
+      { id: 'isa3-1', name: 'Tríceps Corda', weight: '', sets: '3x12-15', tips: '', status: 'pending' },
+      { id: 'isa3-2', name: 'Rosca Direta', weight: '', sets: '3x12-15', tips: '', status: 'pending' },
+      { id: 'isa3-3', name: 'Elevação Lateral (Ombro)', weight: '', sets: '3x12-15', tips: '', status: 'pending' },
+      { id: 'isa3-4', name: 'Puxada Aberta', weight: '', sets: '3x10-12', tips: '', status: 'pending' },
+      { id: 'isa3-5', name: 'Prancha', weight: '', sets: '3x 45segundos', tips: '', status: 'pending' },
+    ],
+  },
+  {
+    id: 'isa-rest-1',
+    title: 'Quinta-feira',
+    subtitle: 'Descanso / Boxe do Amor',
+    color: 'bg-gray-400',
+    exercises: [],
+    isRestDay: true,
+  },
+  {
+    id: 'isa-day-4',
+    title: 'Sexta-feira',
+    subtitle: 'Posteriores e Glúteo',
+    color: 'bg-orange-500',
+    exercises: [
+      { id: 'isa4-1', name: 'Stiff (Barra ou Halteres)', weight: '', sets: '3x10-12', tips: '', status: 'pending' },
+      { id: 'isa4-2', name: 'Mesa Flexora', weight: '', sets: '3x12-15', tips: '', status: 'pending' },
+      { id: 'isa4-3', name: 'Gluteo (Cabo ou Maquina)', weight: '', sets: '3x12', tips: '', status: 'pending' },
+      { id: 'isa4-4', name: 'Cadeira Abdutora', weight: '', sets: '3x12', tips: '', status: 'pending' },
+      { id: 'isa4-5', name: 'Bike Hit', weight: '', sets: '10minutos', tips: '', status: 'pending' },
+    ],
+  },
+  {
+    id: 'isa-rest-2',
+    title: 'Sábado',
+    subtitle: 'Descanso',
+    color: 'bg-gray-400',
+    exercises: [],
+    isRestDay: true,
+  },
+  {
+    id: 'isa-rest-3',
+    title: 'Domingo',
+    subtitle: 'Descanso',
+    color: 'bg-gray-400',
+    exercises: [],
+    isRestDay: true,
+  },
 ];
 
 const GUSTAVO_PLAN: WorkoutDay[] = [
@@ -237,7 +397,9 @@ export default function App() {
     let loadedStudents = INITIAL_STUDENTS;
     if (savedStudents) {
       try {
-        loadedStudents = JSON.parse(savedStudents);
+        const parsed = JSON.parse(savedStudents);
+        const studentIds = new Set(parsed.map((s: any) => s.id));
+        loadedStudents = [...parsed, ...INITIAL_STUDENTS.filter(s => !studentIds.has(s.id))];
       } catch (e) {
         console.error('Error parsing students data', e);
       }
@@ -257,19 +419,54 @@ export default function App() {
 
     if (savedData) {
       try {
-        setAllWorkoutPlans(JSON.parse(savedData));
+        const parsedData = JSON.parse(savedData);
+        
+        // Ensure Gabriel gets his custom plan if he doesn't have one yet or has the default one
+        if (parsedData.gabriel && parsedData.gabriel.length > 0 && parsedData.gabriel[0].id === 'day-1') {
+          parsedData.gabriel = JSON.parse(JSON.stringify(GABRIEL_PLAN));
+        } else if (!parsedData.gabriel) {
+          parsedData.gabriel = JSON.parse(JSON.stringify(GABRIEL_PLAN));
+        }
+
+        // Ensure Isabella gets her custom plan if she doesn't have one yet or has the default one
+        if (parsedData.isabella && parsedData.isabella.length > 0 && parsedData.isabella[0].id === 'day-1') {
+          parsedData.isabella = JSON.parse(JSON.stringify(ISABELLA_PLAN));
+        } else if (!parsedData.isabella) {
+          parsedData.isabella = JSON.parse(JSON.stringify(ISABELLA_PLAN));
+        }
+
+        // Ensure all loaded students have a plan
+        loadedStudents.forEach(s => {
+          if (!parsedData[s.id]) {
+            let plan = INITIAL_PLAN;
+            if (s.id === 'gustavo') plan = GUSTAVO_PLAN;
+            if (s.id === 'gabriel') plan = GABRIEL_PLAN;
+            if (s.id === 'isabella') plan = ISABELLA_PLAN;
+            parsedData[s.id] = JSON.parse(JSON.stringify(plan));
+          }
+        });
+
+        setAllWorkoutPlans(parsedData);
       } catch (e) {
         console.error('Error parsing saved data', e);
         const initial: Record<string, WorkoutDay[]> = {};
         loadedStudents.forEach(s => {
-          initial[s.id] = s.id === 'gustavo' ? GUSTAVO_PLAN : INITIAL_PLAN;
+          let plan = INITIAL_PLAN;
+          if (s.id === 'gustavo') plan = GUSTAVO_PLAN;
+          if (s.id === 'gabriel') plan = GABRIEL_PLAN;
+          if (s.id === 'isabella') plan = ISABELLA_PLAN;
+          initial[s.id] = JSON.parse(JSON.stringify(plan));
         });
         setAllWorkoutPlans(initial);
       }
     } else {
       const initial: Record<string, WorkoutDay[]> = {};
       loadedStudents.forEach(s => {
-        initial[s.id] = s.id === 'gustavo' ? GUSTAVO_PLAN : INITIAL_PLAN;
+        let plan = INITIAL_PLAN;
+        if (s.id === 'gustavo') plan = GUSTAVO_PLAN;
+        if (s.id === 'gabriel') plan = GABRIEL_PLAN;
+        if (s.id === 'isabella') plan = ISABELLA_PLAN;
+        initial[s.id] = JSON.parse(JSON.stringify(plan));
       });
       setAllWorkoutPlans(initial);
     }
@@ -435,57 +632,69 @@ export default function App() {
   const resetWeek = () => {
     if (!selectedStudentId) return;
     if (window.confirm('Deseja resetar o status de todos os exercícios? Os pesos serão mantidos.')) {
-      setAllWorkoutPlans(prev => ({
-        ...prev,
-        [selectedStudentId]: prev[selectedStudentId].map(day => ({
-          ...day,
-          exercises: day.exercises.map(ex => ({ ...ex, status: 'pending' }))
-        }))
-      }));
+      setAllWorkoutPlans(prev => {
+        const studentPlan = prev[selectedStudentId] || INITIAL_PLAN;
+        return {
+          ...prev,
+          [selectedStudentId]: studentPlan.map(day => ({
+            ...day,
+            exercises: day.exercises.map(ex => ({ ...ex, status: 'pending' }))
+          }))
+        };
+      });
     }
   };
 
   const addExercise = (dayId: string) => {
     if (!selectedStudentId) return;
     const newId = `${dayId}-${Date.now()}`;
-    setAllWorkoutPlans(prev => ({
-      ...prev,
-      [selectedStudentId]: prev[selectedStudentId].map(day => {
-        if (day.id === dayId) {
-          return {
-            ...day,
-            exercises: [...day.exercises, { id: newId, name: 'Novo Exercício', weight: '', sets: '3x10', tips: '', status: 'pending' }]
-          };
-        }
-        return day;
-      })
-    }));
+    setAllWorkoutPlans(prev => {
+      const studentPlan = prev[selectedStudentId] || INITIAL_PLAN;
+      return {
+        ...prev,
+        [selectedStudentId]: studentPlan.map(day => {
+          if (day.id === dayId) {
+            return {
+              ...day,
+              exercises: [...day.exercises, { id: newId, name: 'Novo Exercício', weight: '', sets: '3x10', tips: '', status: 'pending' }]
+            };
+          }
+          return day;
+        })
+      };
+    });
   };
 
   const removeExercise = (dayId: string, exerciseId: string) => {
     if (!selectedStudentId) return;
-    setAllWorkoutPlans(prev => ({
-      ...prev,
-      [selectedStudentId]: prev[selectedStudentId].map(day => {
-        if (day.id === dayId) {
-          return {
-            ...day,
-            exercises: day.exercises.filter(ex => ex.id !== exerciseId)
-          };
-        }
-        return day;
-      })
-    }));
+    setAllWorkoutPlans(prev => {
+      const studentPlan = prev[selectedStudentId] || INITIAL_PLAN;
+      return {
+        ...prev,
+        [selectedStudentId]: studentPlan.map(day => {
+          if (day.id === dayId) {
+            return {
+              ...day,
+              exercises: day.exercises.filter(ex => ex.id !== exerciseId)
+            };
+          }
+          return day;
+        })
+      };
+    });
   };
 
   const updateDayInfo = (dayId: string, updates: Partial<WorkoutDay>) => {
     if (!selectedStudentId) return;
-    setAllWorkoutPlans(prev => ({
-      ...prev,
-      [selectedStudentId]: prev[selectedStudentId].map(day => 
-        day.id === dayId ? { ...day, ...updates } : day
-      )
-    }));
+    setAllWorkoutPlans(prev => {
+      const studentPlan = prev[selectedStudentId] || INITIAL_PLAN;
+      return {
+        ...prev,
+        [selectedStudentId]: studentPlan.map(day => 
+          day.id === dayId ? { ...day, ...updates } : day
+        )
+      };
+    });
   };
 
   const addStudent = (name: string) => {
@@ -817,11 +1026,11 @@ export default function App() {
             <section className="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold">
-                  {students.find(s => s.id === selectedStudentId)?.name.charAt(0)}
+                  {students.find(s => s.id === selectedStudentId)?.name?.charAt(0) || '?'}
                 </div>
                 <div>
                   <p className="text-[10px] font-bold text-stone-400 uppercase tracking-widest">Aluno(a)</p>
-                  <p className="font-bold text-stone-900">{students.find(s => s.id === selectedStudentId)?.name}</p>
+                  <p className="font-bold text-stone-900">{students.find(s => s.id === selectedStudentId)?.name || 'Desconhecido'}</p>
                 </div>
               </div>
               <button 
