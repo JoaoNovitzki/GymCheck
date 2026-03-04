@@ -46,6 +46,7 @@ db.exec(`
   INSERT OR IGNORE INTO students (id, name) VALUES ('gustavo', 'Gustavo');
   INSERT OR IGNORE INTO students (id, name) VALUES ('gabriel', 'Gabriel');
   INSERT OR IGNORE INTO students (id, name) VALUES ('isabella', 'Isabella');
+  INSERT OR IGNORE INTO students (id, name) VALUES ('thaise', 'Thaise');
 `);
 
 async function startServer() {

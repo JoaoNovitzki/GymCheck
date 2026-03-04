@@ -41,6 +41,7 @@ const INITIAL_STUDENTS: Student[] = [
   { id: 'gustavo', name: 'Gustavo' },
   { id: 'gabriel', name: 'Gabriel' },
   { id: 'isabella', name: 'Isabella' },
+  { id: 'thaise', name: 'Thaise' },
 ];
 
 const GABRIEL_PLAN: WorkoutDay[] = [
@@ -193,6 +194,89 @@ const ISABELLA_PLAN: WorkoutDay[] = [
   },
   {
     id: 'isa-rest-3',
+    title: 'Domingo',
+    subtitle: 'Descanso',
+    color: 'bg-gray-400',
+    exercises: [],
+    isRestDay: true,
+  },
+];
+
+const THAISE_PLAN: WorkoutDay[] = [
+  {
+    id: 'th-day-1',
+    title: 'Segunda-feira',
+    subtitle: 'Posterior de Coxa + Glúteos',
+    color: 'bg-pink-500',
+    exercises: [
+      { id: 'th1-1', name: 'Agachamento livre ou no Smith', weight: '', sets: '3x8–10', tips: '', status: 'pending' },
+      { id: 'th1-2', name: 'Stiff com halteres ou barra', weight: '', sets: '3x8–10', tips: '', status: 'pending' },
+      { id: 'th1-3', name: 'Cadeira flexora', weight: '', sets: '3x8–10', tips: '', status: 'pending' },
+      { id: 'th1-4', name: 'Elevação pélvica (hip thrust)', weight: '', sets: '3x8–10', tips: '', status: 'pending' },
+      { id: 'th1-5', name: 'Abdução de quadril na máquina', weight: '', sets: '3x10', tips: '', status: 'pending' },
+      { id: 'th1-6', name: 'Panturrilha em pé ou no leg', weight: '', sets: '3x10', tips: '', status: 'pending' },
+    ],
+  },
+  {
+    id: 'th-day-2',
+    title: 'Terça-feira',
+    subtitle: 'Costas',
+    color: 'bg-blue-500',
+    exercises: [
+      { id: 'th2-1', name: 'Puxada na frente (pulldown)', weight: '', sets: '3x8–10', tips: '', status: 'pending' },
+      { id: 'th2-2', name: 'Remada baixa na máquina', weight: '', sets: '3x8–10', tips: '', status: 'pending' },
+      { id: 'th2-3', name: 'Remada unilateral com halter', weight: '', sets: '3x8–10 cada lado', tips: '', status: 'pending' },
+      { id: 'th2-4', name: 'Face pull', weight: '', sets: '3x10', tips: '', status: 'pending' },
+      { id: 'th2-5', name: 'Pulldown com pegada neutra ou articulado', weight: '', sets: '3x8–10', tips: '', status: 'pending' },
+      { id: 'th2-6', name: 'Prancha', weight: '', sets: '3x30 segundos', tips: '', status: 'pending' },
+    ],
+  },
+  {
+    id: 'th-rest-1',
+    title: 'Quarta-feira',
+    subtitle: 'Descanso',
+    color: 'bg-gray-400',
+    exercises: [],
+    isRestDay: true,
+  },
+  {
+    id: 'th-day-3',
+    title: 'Quinta-feira',
+    subtitle: 'Quadríceps + Glúteos',
+    color: 'bg-green-500',
+    exercises: [
+      { id: 'th3-1', name: 'Leg press', weight: '', sets: '3x8–10', tips: '', status: 'pending' },
+      { id: 'th3-2', name: 'Agachamento búlgaro', weight: '', sets: '3x8–10 cada perna', tips: '', status: 'pending' },
+      { id: 'th3-3', name: 'Cadeira extensora', weight: '', sets: '3x8–10', tips: '', status: 'pending' },
+      { id: 'th3-4', name: 'Elevação pélvica', weight: '', sets: '3x8–10', tips: '', status: 'pending' },
+      { id: 'th3-5', name: 'Passada andando ou no lugar', weight: '', sets: '3x8–10 cada perna', tips: '', status: 'pending' },
+      { id: 'th3-6', name: 'Panturrilha sentada', weight: '', sets: '3x10', tips: '', status: 'pending' },
+    ],
+  },
+  {
+    id: 'th-day-4',
+    title: 'Sexta-feira',
+    subtitle: 'Costas + Glúteos',
+    color: 'bg-orange-500',
+    exercises: [
+      { id: 'th4-1', name: 'Puxada na frente ou articulada', weight: '', sets: '3x8–10', tips: '', status: 'pending' },
+      { id: 'th4-2', name: 'Remada cavalinho ou máquina', weight: '', sets: '3x8–10', tips: '', status: 'pending' },
+      { id: 'th4-3', name: 'Stiff leve ou terra romeno', weight: '', sets: '3x8–10', tips: '', status: 'pending' },
+      { id: 'th4-4', name: 'Glúteo no cabo (coice)', weight: '', sets: '3x8–10 cada perna', tips: '', status: 'pending' },
+      { id: 'th4-5', name: 'Abdução de quadril', weight: '', sets: '3x10', tips: '', status: 'pending' },
+      { id: 'th4-6', name: 'Prancha lateral', weight: '', sets: '3x30s cada lado', tips: '', status: 'pending' },
+    ],
+  },
+  {
+    id: 'th-rest-2',
+    title: 'Sábado',
+    subtitle: 'Descanso',
+    color: 'bg-gray-400',
+    exercises: [],
+    isRestDay: true,
+  },
+  {
+    id: 'th-rest-3',
     title: 'Domingo',
     subtitle: 'Descanso',
     color: 'bg-gray-400',
@@ -435,6 +519,13 @@ export default function App() {
           parsedData.isabella = JSON.parse(JSON.stringify(ISABELLA_PLAN));
         }
 
+        // Ensure Thaise gets her custom plan if she doesn't have one yet or has the default one
+        if (parsedData.thaise && parsedData.thaise.length > 0 && parsedData.thaise[0].id === 'day-1') {
+          parsedData.thaise = JSON.parse(JSON.stringify(THAISE_PLAN));
+        } else if (!parsedData.thaise) {
+          parsedData.thaise = JSON.parse(JSON.stringify(THAISE_PLAN));
+        }
+
         // Ensure all loaded students have a plan
         loadedStudents.forEach(s => {
           if (!parsedData[s.id]) {
@@ -442,6 +533,7 @@ export default function App() {
             if (s.id === 'gustavo') plan = GUSTAVO_PLAN;
             if (s.id === 'gabriel') plan = GABRIEL_PLAN;
             if (s.id === 'isabella') plan = ISABELLA_PLAN;
+            if (s.id === 'thaise') plan = THAISE_PLAN;
             parsedData[s.id] = JSON.parse(JSON.stringify(plan));
           }
         });
@@ -455,6 +547,7 @@ export default function App() {
           if (s.id === 'gustavo') plan = GUSTAVO_PLAN;
           if (s.id === 'gabriel') plan = GABRIEL_PLAN;
           if (s.id === 'isabella') plan = ISABELLA_PLAN;
+          if (s.id === 'thaise') plan = THAISE_PLAN;
           initial[s.id] = JSON.parse(JSON.stringify(plan));
         });
         setAllWorkoutPlans(initial);
@@ -466,6 +559,7 @@ export default function App() {
         if (s.id === 'gustavo') plan = GUSTAVO_PLAN;
         if (s.id === 'gabriel') plan = GABRIEL_PLAN;
         if (s.id === 'isabella') plan = ISABELLA_PLAN;
+        if (s.id === 'thaise') plan = THAISE_PLAN;
         initial[s.id] = JSON.parse(JSON.stringify(plan));
       });
       setAllWorkoutPlans(initial);
