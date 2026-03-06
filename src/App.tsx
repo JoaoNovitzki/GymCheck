@@ -42,6 +42,7 @@ const INITIAL_STUDENTS: Student[] = [
   { id: 'gabriel', name: 'Gabriel' },
   { id: 'isabella', name: 'Isabella' },
   { id: 'thaise', name: 'Thaise' },
+  { id: 'carlos', name: 'Carlos' },
 ];
 
 const GABRIEL_PLAN: WorkoutDay[] = [
@@ -534,6 +535,7 @@ export default function App() {
             if (s.id === 'gabriel') plan = GABRIEL_PLAN;
             if (s.id === 'isabella') plan = ISABELLA_PLAN;
             if (s.id === 'thaise') plan = THAISE_PLAN;
+            if (s.id === 'carlos') plan = INITIAL_PLAN;
             parsedData[s.id] = JSON.parse(JSON.stringify(plan));
           }
         });
@@ -548,6 +550,7 @@ export default function App() {
           if (s.id === 'gabriel') plan = GABRIEL_PLAN;
           if (s.id === 'isabella') plan = ISABELLA_PLAN;
           if (s.id === 'thaise') plan = THAISE_PLAN;
+          if (s.id === 'carlos') plan = INITIAL_PLAN;
           initial[s.id] = JSON.parse(JSON.stringify(plan));
         });
         setAllWorkoutPlans(initial);
@@ -560,6 +563,7 @@ export default function App() {
         if (s.id === 'gabriel') plan = GABRIEL_PLAN;
         if (s.id === 'isabella') plan = ISABELLA_PLAN;
         if (s.id === 'thaise') plan = THAISE_PLAN;
+        if (s.id === 'carlos') plan = INITIAL_PLAN;
         initial[s.id] = JSON.parse(JSON.stringify(plan));
       });
       setAllWorkoutPlans(initial);
